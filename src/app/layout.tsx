@@ -90,6 +90,7 @@ export default function RootLayout({
             --primary-hover: ${adjustColour(d.primaryColour, -20)};
             --accent: ${d.accentColour};
             --accent-hover: ${adjustColour(d.accentColour, -20)};
+            --on-accent: #ffffff;
             --bg-primary: ${d.backgroundColour};
             --bg-secondary: ${d.bgSecondaryColour ?? "#f7fafc"};
             --text-primary: ${d.textColour};
@@ -102,6 +103,7 @@ export default function RootLayout({
               --primary-hover: ${darkPrimaryHover};
               --accent: ${darkAccent};
               --accent-hover: ${darkAccentHover};
+              --on-accent: ${d.primaryColour};
               --bg-primary: ${darkBg};
               --bg-secondary: ${darkBgSecondary};
               --text-primary: ${darkText};
@@ -114,6 +116,7 @@ export default function RootLayout({
             --primary-hover: ${darkPrimaryHover};
             --accent: ${darkAccent};
             --accent-hover: ${darkAccentHover};
+            --on-accent: ${d.primaryColour};
             --bg-primary: ${darkBg};
             --bg-secondary: ${darkBgSecondary};
             --text-primary: ${darkText};

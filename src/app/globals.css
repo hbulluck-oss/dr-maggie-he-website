@@ -47,6 +47,23 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 7rem;
+    }
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  @media (min-width: 640px) {
+    section[id] {
+      scroll-margin-top: 7rem;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

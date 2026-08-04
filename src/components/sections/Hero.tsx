@@ -27,7 +27,7 @@ export function Hero() {
               >
                 {hero.primaryCTA}
               </Button>
-              <Button href={`tel:${contact.phone}`} variant="outline">
+              <Button href="#faq" variant="outline">
                 {hero.secondaryCTA}
               </Button>
             </div>

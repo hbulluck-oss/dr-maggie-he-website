@@ -9,6 +9,7 @@
     "gmcNumber": "MED0002072419",
     "gmcRegisterUrl": "https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx",
     "photoPath": "/images/dr-maggie-he-headshot.jpg",
+    "aboutPhotoPath": "/images/dr-maggie-he-cathlab-2.jpg",
     "bio": [
       "Dr Maggie He is a Consultant Cardiologist with subspecialty expertise in interventional cardiology. She is known for her calm, patient-centred approach and her ability to clearly explain heart conditions and treatment options, helping patients feel informed, supported, and confident in their care.",
       "She has a strong interest in the management of coronary artery disease and heart attack care, combining advanced procedural skills with evidence-based, individualised treatment. She takes a holistic approach to cardiovascular health, recognising the importance of prevention, lifestyle, medical therapy, and long-term risk reduction alongside procedural care.",
@@ -227,7 +228,7 @@
     {
       "title": "What Happens During a Coronary Angiogram?",
       "excerpt": "A step-by-step guide to what to expect before, during, and after a coronary angiogram procedure.",
-      "image": "/images/dr-maggie-he-cathlab-2.jpg",
+      "image": "",
       "slug": "what-happens-during-coronary-angiogram",
       "url": "",
       "date": "2024-09-20"

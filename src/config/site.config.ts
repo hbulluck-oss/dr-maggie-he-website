@@ -21,6 +21,7 @@ export const siteConfig = siteContentJson as {
     gmcNumber: string;
     gmcRegisterUrl: string;
     photoPath: string;
+    aboutPhotoPath?: string;
     bio: string[];
     roles: string[];
   };

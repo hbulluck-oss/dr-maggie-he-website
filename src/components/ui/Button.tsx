@@ -22,7 +22,7 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] focus-visible:ring-[var(--accent)]",
+    "bg-[var(--accent)] text-[var(--on-accent)] hover:bg-[var(--accent-hover)] focus-visible:ring-[var(--accent)]",
   secondary:
     "bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:bg-[var(--border)] focus-visible:ring-[var(--accent)]",
   outline:
