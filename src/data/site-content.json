@@ -5,7 +5,7 @@
     "fullName": "Dr Maggie He",
     "displayName": "Dr Maggie He",
     "credentials": "BMedSci, MD, FRACP",
-    "specialty": "Consultant Cardiologist, Interventional Cardiology",
+    "specialty": "Consultant Cardiologist with subspecialty expertise in interventional cardiology",
     "gmcNumber": "MED0002072419",
     "gmcRegisterUrl": "https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx",
     "photoPath": "/images/dr-maggie-he-headshot.jpg",
@@ -17,7 +17,7 @@
       "Prior to her subspecialty training, Dr He completed her cardiology advanced training at Gold Coast University Hospital and Princess Alexandra Hospital in Brisbane, achieving Fellowship of the Royal Australasian College of Physicians (FRACP). Alongside her clinical work, she remains active in medical education and research, holding a Senior Lecturer position at Griffith University's School of Medicine and Dentistry and contributing to international peer-reviewed publications and conference presentations."
     ],
     "roles": [
-      "Consultant Cardiologist, Interventional Cardiology",
+      "Consultant Cardiologist with subspecialty expertise in interventional cardiology",
       "Senior Lecturer, Griffith University School of Medicine and Dentistry",
       "2025 ANZET-UK Interventional Cardiology Fellowship Award Recipient"
     ]
@@ -193,7 +193,7 @@
   },
   "seo": {
     "siteUrl": "https://www.drmaggiehe.com.au",
-    "title": "Dr Maggie He — Consultant Cardiologist, Interventional Cardiology, Brisbane",
+    "title": "Dr Maggie He — Consultant Cardiologist, Brisbane | Interventional Cardiology",
     "description": "Specialist cardiology care in Brisbane. Dr Maggie He offers expert assessment and treatment for chest pain, coronary artery disease, heart attack care, and cardiovascular prevention.",
     "locale": "en_AU"
   },
