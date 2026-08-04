@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design Tokens (Light Mode — Royal Blue + Coral) ─────────────────────── */
+:root {
+  --primary: #1e4e8c;
+  --primary-hover: #163a6b;
+  --accent: #c53030;
+  --accent-hover: #9b2c2c;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7fafc;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --border: #e2e8f0;
+}
+
+/* ── Dark Mode (OS preference) ──────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --primary: #5a9bd5;
+    --primary-hover: #7ab8e8;
+    --accent: #e57373;
+    --accent-hover: #ef9a9a;
+    --bg-primary: #0f1724;
+    --bg-secondary: #1a2435;
+    --text-primary: #e8ecf1;
+    --text-secondary: #94a3b8;
+    --border: #2d3a4f;
+  }
+}
+
+/* ── Dark Mode (manual toggle) ──────────────────────────────────────────── */
+:root.dark {
+  --primary: #5a9bd5;
+  --primary-hover: #7ab8e8;
+  --accent: #e57373;
+  --accent-hover: #ef9a9a;
+  --bg-primary: #0f1724;
+  --bg-secondary: #1a2435;
+  --text-primary: #e8ecf1;
+  --text-secondary: #94a3b8;
+  --border: #2d3a4f;
+}
+
+/* ── Base Styles ─────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* ── Print Stylesheet ────────────────────────────────────────────────────── */
+@media print {
+  header,
+  footer,
+  nav,
+  .urgent-banner,
+  .booking-form,
+  button {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  .contact-details {
+    display: block !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "doctor": {
+    "firstName": "Maggie",
+    "lastName": "He",
+    "fullName": "Dr Maggie He",
+    "displayName": "Dr Maggie He",
+    "credentials": "BMedSci, MD, FRACP",
+    "specialty": "Consultant Cardiologist, Interventional Cardiology",
+    "gmcNumber": "MED0002072419",
+    "gmcRegisterUrl": "https://www.ahpra.gov.au/Registration/Registers-of-Practitioners.aspx",
+    "photoPath": "/images/dr-maggie-he-headshot.jpg",
+    "bio": [
+      "Dr Maggie He is a Consultant Cardiologist with subspecialty expertise in interventional cardiology. She is known for her calm, patient-centred approach and her ability to clearly explain heart conditions and treatment options, helping patients feel informed, supported, and confident in their care.",
+      "She has a strong interest in the management of coronary artery disease and heart attack care, combining advanced procedural skills with evidence-based, individualised treatment. She takes a holistic approach to cardiovascular health, recognising the importance of prevention, lifestyle, medical therapy, and long-term risk reduction alongside procedural care.",
+      "Dr He completed two years of dedicated interventional cardiology fellowship training, first at Gold Coast University Hospital and then through the prestigious Australia and New Zealand Endovascular Therapies (ANZET) Fellowship at Leeds General Infirmary in the United Kingdom — the busiest primary PCI (heart attack) centre in the UK. Through this fellowship she gained extensive experience in high-volume, complex, and high-risk coronary angioplasty and stenting, including the treatment of left main disease, heavily calcified arteries, and acute heart attacks.",
+      "Prior to her subspecialty training, Dr He completed her cardiology advanced training at Gold Coast University Hospital and Princess Alexandra Hospital in Brisbane, achieving Fellowship of the Royal Australasian College of Physicians (FRACP). Alongside her clinical work, she remains active in medical education and research, holding a Senior Lecturer position at Griffith University's School of Medicine and Dentistry and contributing to international peer-reviewed publications and conference presentations."
+    ],
+    "roles": [
+      "Consultant Cardiologist, Interventional Cardiology",
+      "Senior Lecturer, Griffith University School of Medicine and Dentistry",
+      "2025 ANZET-UK Interventional Cardiology Fellowship Award Recipient"
+    ]
+  },
+  "trustBadges": [
+    "AHPRA-registered",
+    "FRACP",
+    "ANZET-UK Interventional Cardiology Fellow",
+    "Senior Lecturer, Griffith University",
+    "Medicare rebates apply"
+  ],
+  "hero": {
+    "headline": "Specialist assessment and treatment for chest pain, coronary artery disease, and long-term heart health",
+    "subheadline": "Consultant Cardiologist with subspecialty expertise in interventional cardiology, offering thorough assessment, clear explanations, and evidence-based treatment for heart conditions.",
+    "primaryCTA": "Book a consultation",
+    "secondaryCTA": "Referrer information"
+  },
+  "conditions": [
+    {
+      "slug": "chest-pain",
+      "title": "Chest pain and suspected angina",
+      "shortDescription": "Thorough assessment to find the cause of your chest pain and the right treatment.",
+      "icon": "Heart"
+    },
+    {
+      "slug": "coronary-artery-disease",
+      "title": "Coronary artery disease",
+      "shortDescription": "From diagnosis through to angioplasty and stenting when needed, including complex and high-risk cases.",
+      "icon": "Stethoscope"
+    },
+    {
+      "slug": "high-blood-pressure",
+      "title": "High blood pressure",
+      "shortDescription": "Assessment and management to reduce your risk of stroke and heart disease.",
+      "icon": "Gauge"
+    },
+    {
+      "slug": "high-cholesterol",
+      "title": "High cholesterol and cardiovascular risk",
+      "shortDescription": "Comprehensive risk assessment and a personalised plan to protect your heart.",
+      "icon": "Shield"
+    },
+    {
+      "slug": "palpitations",
+      "title": "Palpitations and heart rhythm concerns",
+      "shortDescription": "Investigation and management of irregular or fast heartbeats.",
+      "icon": "Activity"
+    },
+    {
+      "slug": "heart-failure",
+      "title": "Shortness of breath and heart failure",
+      "shortDescription": "Diagnosis and treatment when your heart is not pumping as well as it should.",
+      "icon": "Wind"
+    },
+    {
+      "slug": "valve-disease",
+      "title": "Heart valve disease",
+      "shortDescription": "Assessment of valve problems and referral for intervention when appropriate.",
+      "icon": "HeartPulse"
+    },
+    {
+      "slug": "pre-operative-assessment",
+      "title": "Pre-operative cardiac assessment",
+      "shortDescription": "Heart checks before planned surgery to make sure you are safe to proceed.",
+      "icon": "ClipboardCheck"
+    }
+  ],
+  "services": {
+    "investigations": [
+      {
+        "name": "Electrocardiogram (ECG)",
+        "description": "A quick, painless recording of your heart's electrical activity."
+      },
+      {
+        "name": "Echocardiogram",
+        "description": "An ultrasound scan of your heart to assess how it is pumping and check the valves."
+      },
+      {
+        "name": "Exercise stress test / stress echocardiography",
+        "description": "Monitoring your heart while you walk on a treadmill, or with dobutamine, to check for reduced blood flow."
+      },
+      {
+        "name": "Holter monitor",
+        "description": "A portable heart monitor worn for a period of days to detect rhythm problems."
+      },
+      {
+        "name": "24-hour blood pressure monitor",
+        "description": "A cuff worn for 24 hours to get an accurate picture of your blood pressure."
+      },
+      {
+        "name": "CT calcium score / CT coronary angiography (CTCA)",
+        "description": "Non-invasive imaging to assess for coronary artery disease."
+      }
+    ],
+    "procedures": [
+      {
+        "name": "Coronary angiography",
+        "description": "A catheter-based test to look directly at the arteries supplying your heart."
+      },
+      {
+        "name": "Coronary angioplasty and stenting (PCI)",
+        "description": "Opening a narrowed or blocked heart artery and placing a stent to keep it open, including complex and high-risk cases."
+      },
+      {
+        "name": "Intravascular imaging-guided angioplasty",
+        "description": "Detailed imaging from inside the artery (IVUS/OCT) to guide precise stent placement."
+      },
+      {
+        "name": "Coronary physiology and pressure wire assessment",
+        "description": "Measuring blood flow and pressure across a narrowing to determine whether it needs treatment."
+      },
+      {
+        "name": "Calcium modification techniques",
+        "description": "Rotational atherectomy, orbital atherectomy, and intravascular lithotripsy to treat heavily calcified coronary arteries."
+      }
+    ]
+  },
+  "locations": [
+    {
+      "name": "Mater Medical Centre",
+      "area": "South Brisbane, QLD",
+      "type": "Private",
+      "days": "[Days pending — confirm with Dr He]",
+      "mapUrl": "https://maps.google.com/?q=Mater+Medical+Centre+South+Brisbane",
+      "note": "Referral required"
+    },
+    {
+      "name": "St Andrews Hospital Specialist Suites",
+      "area": "Spring Hill, QLD",
+      "type": "Private",
+      "days": "[Days pending — confirm with Dr He]",
+      "mapUrl": "https://maps.google.com/?q=St+Andrews+Hospital+Specialist+Suites+Spring+Hill",
+      "note": "Referral required"
+    }
+  ],
+  "fees": {
+    "initialConsultation": "[Fee pending — confirm with Dr He]",
+    "followUp": "[Fee pending — confirm with Dr He]",
+    "note": "A valid referral from your GP or another specialist is required for a Medicare rebate. Please contact the rooms for a full fee schedule and current Medicare rebate information."
+  },
+  "faqs": [
+    {
+      "question": "Do I need a referral?",
+      "answer": "Yes. To claim a Medicare rebate for your consultation, you will need a valid referral from your GP or another specialist. Please bring your referral letter to your first appointment."
+    },
+    {
+      "question": "What happens at the first appointment?",
+      "answer": "Your first consultation typically lasts 30 to 45 minutes. Dr He will take a detailed history, perform a clinical examination, review any previous tests, and discuss a plan with you. If further tests are needed, she will explain what they involve and why."
+    },
+    {
+      "question": "Will I get a Medicare rebate?",
+      "answer": "Most consultations attract a Medicare rebate when you have a valid referral. Private health insurance may cover hospital-based costs for procedures, depending on your level of cover. Please check your policy or ask the rooms for guidance."
+    },
+    {
+      "question": "Can I be seen urgently?",
+      "answer": "If you have new or worsening chest pain, severe breathlessness, or feel like your heart is racing and you feel unwell, please call 000 or go to your nearest Emergency Department. For urgent but non-emergency concerns, please call the rooms and we will do our best to see you promptly."
+    },
+    {
+      "question": "What should I bring to my appointment?",
+      "answer": "Please bring your referral letter, a list of your current medications, any recent test results or letters from other doctors, and your Medicare and private health insurance details if applicable. If you have specific questions, it helps to write them down beforehand."
+    }
+  ],
+  "contact": {
+    "email": "[secretary email pending — confirm with Dr He]",
+    "phone": "[secretary phone pending — confirm with Dr He]",
+    "bookingType": "phone",
+    "bookingUrl": "",
+    "calLink": "",
+    "formspreeId": "",
+    "formDisclaimer": "This form is not monitored 24/7. Do not use it in an emergency. If you have chest pain or feel seriously unwell, call 000.",
+    "urgentBanner": "If you are experiencing chest pain, severe breathlessness, or feel very unwell right now, call 000 immediately.",
+    "secretaryName": "[secretary name pending — confirm with Dr He]"
+  },
+  "seo": {
+    "siteUrl": "https://www.drmaggiehe.com.au",
+    "title": "Dr Maggie He — Consultant Cardiologist, Interventional Cardiology, Brisbane",
+    "description": "Specialist cardiology care in Brisbane. Dr Maggie He offers expert assessment and treatment for chest pain, coronary artery disease, heart attack care, and cardiovascular prevention.",
+    "locale": "en_AU"
+  },
+  "design": {
+    "primaryColour": "#1a2744",
+    "accentColour": "#8a5a10",
+    "backgroundColour": "#fdfbf7",
+    "textColour": "#1a2744",
+    "mutedTextColour": "#4c556b",
+    "borderColour": "#e3dccc",
+    "bgSecondaryColour": "#f4efe4",
+    "darkPrimaryColour": "#8fa5cc",
+    "darkPrimaryHoverColour": "#a9bad9",
+    "darkAccentColour": "#e3b45f",
+    "darkAccentHoverColour": "#ecc887",
+    "darkBackgroundColour": "#111827",
+    "darkBgSecondaryColour": "#1b2435",
+    "darkTextColour": "#ece7dd",
+    "darkMutedTextColour": "#a6adbd",
+    "darkBorderColour": "#2c3548"
+  },
+  "publications": [],
+  "articles": [
+    {
+      "title": "Understanding Chest Pain: When to Worry",
+      "excerpt": "Not all chest pain is a heart attack. Learn about the different causes and when you should seek urgent help.",
+      "image": "",
+      "slug": "understanding-chest-pain",
+      "url": "",
+      "date": "2024-11-15"
+    },
+    {
+      "title": "What Happens During a Coronary Angiogram?",
+      "excerpt": "A step-by-step guide to what to expect before, during, and after a coronary angiogram procedure.",
+      "image": "/images/dr-maggie-he-cathlab-2.jpg",
+      "slug": "what-happens-during-coronary-angiogram",
+      "url": "",
+      "date": "2024-09-20"
+    },
+    {
+      "title": "Blood Pressure: What the Numbers Mean",
+      "excerpt": "Your blood pressure reading has two numbers. Here is what they mean and why they matter for your heart health.",
+      "image": "",
+      "slug": "blood-pressure-what-the-numbers-mean",
+      "url": "",
+      "date": "2024-07-10"
+    }
+  ],
+  "insurers": [
+    "Medicare",
+    "Medibank",
+    "Bupa",
+    "HCF",
+    "nib",
+    "HBF"
+  ],
+  "socialLinks": [
+    {
+      "platform": "LinkedIn",
+      "url": ""
+    },
+    {
+      "platform": "Hospital Profile",
+      "url": ""
+    }
+  ],
+  "analytics": {
+    "plausibleDomain": ""
+  },
+  "nav": [
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Conditions",
+      "href": "#conditions"
+    },
+    {
+      "label": "Services",
+      "href": "#services"
+    },
+    {
+      "label": "Locations",
+      "href": "#locations"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    }
+  ],
+  "copyrightName": "Dr Maggie He"
+}

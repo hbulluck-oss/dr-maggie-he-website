@@ -1,0 +1,241 @@
+backend:
+  name: github
+  repo: your-username/doctor-website  # CHANGE THIS: your GitHub username/repo
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: site-content
+    label: "Site Content"
+    files:
+      - name: content
+        label: "All Site Content"
+        file: src/data/site-content.json
+        format: json
+        fields:
+          # ── Doctor Identity ──
+          - name: doctor
+            label: "Doctor Details"
+            widget: object
+            fields:
+              - { name: firstName, label: "First Name", widget: string }
+              - { name: lastName, label: "Last Name", widget: string }
+              - { name: fullName, label: "Full Name (with title)", widget: string, hint: "e.g. Dr Heerajnarain Bulluck" }
+              - { name: displayName, label: "Display Name", widget: string, hint: "Shown in the header, e.g. Dr Heeraj Bulluck" }
+              - { name: credentials, label: "Credentials", widget: string, hint: "e.g. MB BCh, MRCP, PhD, FESC" }
+              - { name: specialty, label: "Specialty", widget: string }
+              - { name: gmcNumber, label: "GMC Number", widget: string }
+              - { name: gmcRegisterUrl, label: "GMC Register URL", widget: string }
+              - { name: photoPath, label: "Photo", widget: image, hint: "Upload your headshot photo" }
+              - name: bio
+                label: "Biography Paragraphs"
+                widget: list
+                field: { name: paragraph, label: "Paragraph", widget: text }
+              - name: roles
+                label: "Professional Roles"
+                widget: list
+                field: { name: role, label: "Role", widget: string }
+
+          # ── Trust Badges ──
+          - name: trustBadges
+            label: "Trust Badges"
+            widget: list
+            hint: "Short credential badges shown below the hero section"
+            field: { name: badge, label: "Badge", widget: string }
+
+          # ── Hero Section ──
+          - name: hero
+            label: "Hero Section"
+            widget: object
+            fields:
+              - { name: headline, label: "Headline", widget: string }
+              - { name: subheadline, label: "Subheadline", widget: text }
+              - { name: primaryCTA, label: "Primary Button Text", widget: string, hint: "e.g. Book consultation" }
+              - { name: secondaryCTA, label: "Secondary Button Text", widget: string, hint: "e.g. Call now" }
+
+          # ── Conditions ──
+          - name: conditions
+            label: "Conditions You Treat"
+            widget: list
+            fields:
+              - { name: slug, label: "URL Slug", widget: string, hint: "Lowercase with hyphens, e.g. chest-pain" }
+              - { name: title, label: "Title", widget: string }
+              - { name: shortDescription, label: "Short Description", widget: text }
+              - name: icon
+                label: "Icon"
+                widget: select
+                options:
+                  - Heart
+                  - Activity
+                  - Wind
+                  - Gauge
+                  - Shield
+                  - Stethoscope
+                  - HeartPulse
+                  - ClipboardCheck
+                  - Brain
+                  - Thermometer
+                  - Eye
+                  - Ear
+                  - Bone
+                  - Pill
+                  - Syringe
+                  - Microscope
+
+          # ── Services ──
+          - name: services
+            label: "Services"
+            widget: object
+            fields:
+              - name: investigations
+                label: "Investigations"
+                widget: list
+                fields:
+                  - { name: name, label: "Name", widget: string }
+                  - { name: description, label: "Description", widget: text }
+              - name: procedures
+                label: "Procedures"
+                widget: list
+                fields:
+                  - { name: name, label: "Name", widget: string }
+                  - { name: description, label: "Description", widget: text }
+
+          # ── Locations ──
+          - name: locations
+            label: "Clinic Locations"
+            widget: list
+            fields:
+              - { name: name, label: "Clinic Name", widget: string }
+              - { name: area, label: "Area", widget: string }
+              - name: type
+                label: "Type"
+                widget: select
+                options: ["NHS", "Private"]
+              - { name: days, label: "Days Available", widget: string }
+              - { name: mapUrl, label: "Google Maps URL", widget: string }
+              - { name: note, label: "Note", widget: string }
+
+          # ── Fees ──
+          - name: fees
+            label: "Fees"
+            widget: object
+            fields:
+              - { name: initialConsultation, label: "Initial Consultation Fee", widget: string }
+              - { name: followUp, label: "Follow-up Fee", widget: string }
+              - { name: note, label: "Fee Note", widget: text }
+
+          # ── FAQs ──
+          - name: faqs
+            label: "Frequently Asked Questions"
+            widget: list
+            fields:
+              - { name: question, label: "Question", widget: string }
+              - { name: answer, label: "Answer", widget: text }
+
+          # ── Articles for Patients ──
+          - name: articles
+            label: "Articles for Patients"
+            widget: list
+            hint: "Medium-style articles with images for patient education"
+            fields:
+              - { name: title, label: "Article Title", widget: string }
+              - { name: excerpt, label: "Short Excerpt", widget: text, hint: "1-2 sentences summarising the article" }
+              - { name: image, label: "Cover Image", widget: image, required: false, hint: "Landscape image for the article card" }
+              - { name: url, label: "Link URL", widget: string, hint: "Link to the full article (Medium, blog, etc.)" }
+              - { name: date, label: "Date", widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+
+          # ── Publications ──
+          - name: publications
+            label: "Selected Publications"
+            widget: list
+            hint: "Add your selected publications from PubMed"
+            fields:
+              - { name: title, label: "Paper Title", widget: string }
+              - { name: authors, label: "Authors", widget: string, hint: "e.g. Bulluck H, Smith J, et al." }
+              - { name: journal, label: "Journal", widget: string }
+              - { name: year, label: "Year", widget: number, value_type: int }
+              - { name: doi, label: "DOI", widget: string, required: false }
+              - { name: url, label: "PubMed URL", widget: string, hint: "e.g. https://pubmed.ncbi.nlm.nih.gov/12345678/" }
+
+          # ── Contact ──
+          - name: contact
+            label: "Contact Details"
+            widget: object
+            fields:
+              - { name: email, label: "Email", widget: string }
+              - { name: phone, label: "Phone", widget: string }
+              - name: bookingType
+                label: "Booking Type"
+                widget: select
+                options:
+                  - { label: "Contact Form (Formspree)", value: "email" }
+                  - { label: "Cal.com Booking Widget", value: "cal" }
+                  - { label: "Phone/Email Only", value: "phone" }
+              - { name: bookingUrl, label: "External Booking URL", widget: string, required: false, hint: "If set, the Book Consultation button links here (e.g. hospital booking page) instead of the contact form" }
+              - { name: calLink, label: "Cal.com Link", widget: string, required: false }
+              - { name: formspreeId, label: "Formspree Form ID", widget: string, required: false }
+              - { name: formDisclaimer, label: "Form Disclaimer", widget: text }
+              - { name: urgentBanner, label: "Urgent Banner Text", widget: text }
+
+          # ── SEO ──
+          - name: seo
+            label: "SEO Settings"
+            widget: object
+            fields:
+              - { name: siteUrl, label: "Website URL", widget: string, hint: "e.g. https://www.yourdomain.co.uk" }
+              - { name: title, label: "Page Title", widget: string }
+              - { name: description, label: "Meta Description", widget: text }
+              - { name: locale, label: "Locale", widget: string, default: "en_GB" }
+
+          # ── Design ──
+          - name: design
+            label: "Colour Scheme"
+            widget: object
+            fields:
+              - { name: primaryColour, label: "Primary Colour", widget: color }
+              - { name: accentColour, label: "Accent Colour", widget: color }
+              - { name: backgroundColour, label: "Background Colour", widget: color }
+              - { name: textColour, label: "Text Colour", widget: color }
+              - { name: mutedTextColour, label: "Muted Text Colour", widget: color }
+              - { name: borderColour, label: "Border Colour", widget: color }
+
+          # ── Analytics ──
+          - name: analytics
+            label: "Analytics"
+            widget: object
+            fields:
+              - { name: plausibleDomain, label: "Plausible Domain", widget: string, required: false, hint: "e.g. www.yourdomain.co.uk" }
+
+          # ── Navigation ──
+          - name: nav
+            label: "Navigation Menu"
+            widget: list
+            fields:
+              - { name: label, label: "Link Text", widget: string }
+              - { name: href, label: "Link Target", widget: string, hint: "e.g. #about or /publications" }
+
+  # ── Condition Pages (MDX) ──
+  - name: conditions
+    label: "Condition Pages"
+    folder: src/content/conditions
+    create: true
+    extension: mdx
+    format: frontmatter
+    fields:
+      - { name: title, label: "Title", widget: string }
+      - { name: shortDescription, label: "Short Description", widget: text }
+      - name: icon
+        label: "Icon"
+        widget: select
+        options:
+          - Heart
+          - Activity
+          - Wind
+          - Gauge
+          - Shield
+          - Stethoscope
+          - HeartPulse
+          - ClipboardCheck
+      - { name: body, label: "Page Content", widget: markdown }
