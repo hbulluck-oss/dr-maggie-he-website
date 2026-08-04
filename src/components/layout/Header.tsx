@@ -103,8 +103,8 @@ export function Header() {
             <span className="hidden sm:block text-xs text-[var(--text-secondary)] leading-tight">
               {siteConfig.doctor.credentials}
             </span>
-            <span className="hidden sm:block text-xs text-[var(--text-secondary)] leading-tight">
-              {siteConfig.doctor.specialty}
+            <span className="hidden sm:block text-xs font-medium text-[var(--accent)] leading-tight">
+              {siteConfig.doctor.shortSpecialty ?? siteConfig.doctor.specialty}
             </span>
           </a>
 

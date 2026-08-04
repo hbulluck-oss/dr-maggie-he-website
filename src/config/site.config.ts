@@ -16,6 +16,7 @@ export const siteConfig = siteContentJson as {
     displayName: string;
     credentials: string;
     specialty: string;
+    shortSpecialty?: string;
     // Generic medical-registration fields (field name kept for kit compatibility —
     // holds AHPRA registration number for Australian doctors, GMC for UK doctors, etc.)
     gmcNumber: string;
