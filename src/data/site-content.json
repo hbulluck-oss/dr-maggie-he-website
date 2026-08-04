@@ -218,28 +218,28 @@
   "publications": [],
   "articles": [
     {
-      "title": "Understanding Chest Pain: When to Worry",
-      "excerpt": "Not all chest pain is a heart attack. Learn about the different causes and when you should seek urgent help.",
+      "title": "Chest Pain: When Should You Worry?",
+      "excerpt": "Chest pain has many possible causes, and only some of them involve the heart. Here's how to tell the difference and when to act fast.",
       "image": "",
       "slug": "understanding-chest-pain",
       "url": "",
-      "date": "2024-11-15"
+      "date": "2026-07-20"
     },
     {
-      "title": "What Happens During a Coronary Angiogram?",
-      "excerpt": "A step-by-step guide to what to expect before, during, and after a coronary angiogram procedure.",
+      "title": "Your Coronary Angiogram: What Actually Happens",
+      "excerpt": "Wondering what to expect from a coronary angiogram? Here's a plain-English walkthrough of the day, from arrival to going home.",
       "image": "",
       "slug": "what-happens-during-coronary-angiogram",
       "url": "",
-      "date": "2024-09-20"
+      "date": "2026-06-05"
     },
     {
-      "title": "Blood Pressure: What the Numbers Mean",
-      "excerpt": "Your blood pressure reading has two numbers. Here is what they mean and why they matter for your heart health.",
+      "title": "What Do Your Blood Pressure Numbers Actually Mean?",
+      "excerpt": "Blood pressure readings come as two numbers for a reason. Here's what each one tells you, and what to do if yours is creeping up.",
       "image": "",
       "slug": "blood-pressure-what-the-numbers-mean",
       "url": "",
-      "date": "2024-07-10"
+      "date": "2026-04-18"
     }
   ],
   "insurers": [
