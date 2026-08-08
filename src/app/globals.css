@@ -141,3 +141,35 @@
     page-break-inside: avoid;
   }
 }
+
+/* ── Logo theme swap ─────────────────────────────────────────────────────── */
+/* Her navy (#01367c) sits at 1.5:1 against the dark background, well under the
+   3:1 WCAG asks of graphical objects, so dark mode uses a lighter-navy variant
+   (#4f87d1, 4.8:1). Done in CSS rather than JS because the theme can come from
+   the OS as well as the header toggle, and a JS swap would flash on load.
+   Kept outside @layer so it wins over the Tailwind height utilities. */
+.logo-light {
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) .logo-light {
+    display: none;
+  }
+
+  :root:not(.light) .logo-dark {
+    display: block;
+  }
+}
+
+:root.dark .logo-light {
+  display: none;
+}
+
+:root.dark .logo-dark {
+  display: block;
+}

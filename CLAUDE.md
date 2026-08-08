@@ -54,11 +54,27 @@ Heeraj from the doctor-website template. Next.js 14 (App Router) + Tailwind + Ty
 ## Logo
 
 Her monogram (heart + M + H, red/navy/gold) is the site mark. Source art is the sibling file
-`../Maggie He Logo.jpeg` — a JPEG **on a black background**, not transparent. The web asset
-`public/images/logo-mh.png` was derived from it by keying out the black, un-multiplying the
-antialiased edges so they do not fringe grey, and cropping to the mark (621x384). `src/app/favicon.ico`
-and `src/app/apple-icon.png` are generated from the same PNG. If she ever supplies real vector art,
-replace all three rather than re-keying the JPEG.
+`../Maggie He Logo.jpeg` — a JPEG **on a black background**, not transparent. The web assets were
+derived from it by keying out the black, un-multiplying the antialiased edges so they do not fringe
+grey, and cropping to the mark (414x256).
+
+There are **two variants** and the swap is CSS-only, in `globals.css`:
+
+| File | Used when | Navy |
+|---|---|---|
+| `public/images/logo-mh.png` | light mode | `#01367c` (hers) — 11.2:1 on cream |
+| `public/images/logo-mh-dark.png` | dark mode | `#4f87d1` lifted — 4.8:1 on `#111827` |
+
+Her navy measures **1.5:1** against the dark background, against the 3:1 WCAG asks of graphical
+objects, so the M all but disappeared. Only the navy is lifted; the red and gold already clear 7:1
+and are untouched, and this matches how the site already lightens its own palette in dark mode. The
+classes are `.logo-light`/`.logo-dark` and the rules live **outside `@layer`** so they beat the
+Tailwind height utilities; they cover both dark paths (`prefers-color-scheme` and the `.dark` class),
+since a JS swap would flash on load. A white keyline was considered and rejected: at 40-48px it
+closes up the counters where the heart crosses the M.
+
+`src/app/favicon.ico` and `src/app/apple-icon.png` come from the light PNG. If she ever supplies real
+vector art, replace all four rather than re-keying the JPEG.
 
 **The header is width-constrained.** The desktop nav is 773px wide on its own (six links, theme
 toggle, and a 160px "Book a consultation" button), so the full nav plus the logo and name cannot fit

@@ -97,14 +97,27 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-site items-center justify-between px-4 py-4 sm:px-6">
           <a href="/" className="group flex items-center gap-3 no-underline sm:gap-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo-mh.png"
-              alt=""
-              width={621}
-              height={384}
-              className="hidden h-10 w-auto shrink-0 min-[360px]:block sm:h-14 lg:h-12 xl:h-16"
-            />
+            {/* Two variants: her navy only reaches 1.5:1 on the dark background, so dark mode
+                gets a lighter-navy version. The swap is CSS-only (see globals.css) because the
+                theme can come from the OS as well as the toggle. */}
+            <span className="hidden shrink-0 min-[360px]:block">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo-mh.png"
+                alt=""
+                width={414}
+                height={256}
+                className="logo-light h-10 w-auto sm:h-14 lg:h-12 xl:h-16"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo-mh-dark.png"
+                alt=""
+                width={414}
+                height={256}
+                className="logo-dark h-10 w-auto sm:h-14 lg:h-12 xl:h-16"
+              />
+            </span>
             <span className="block">
               <span className="block whitespace-nowrap text-3xl font-bold text-[var(--text-primary)] lg:text-2xl xl:text-4xl">
                 {siteConfig.doctor.displayName}
@@ -180,8 +193,12 @@ export function Header() {
           >
             <div className="flex items-center justify-between px-4 py-4 sm:px-6">
               <a href="/" className="flex items-center gap-3 text-lg font-bold text-[var(--text-primary)] no-underline">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/logo-mh.png" alt="" width={621} height={384} className="h-9 w-auto shrink-0" />
+                <span className="shrink-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/logo-mh.png" alt="" width={414} height={256} className="logo-light h-9 w-auto" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/logo-mh-dark.png" alt="" width={414} height={256} className="logo-dark h-9 w-auto" />
+                </span>
                 {siteConfig.doctor.displayName}
               </a>
               <button
