@@ -10,7 +10,7 @@ export function Hero() {
     <section className="relative bg-[var(--bg-secondary)] pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="mx-auto max-w-site px-4 sm:px-6">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
-          <div>
+          <div className="order-last lg:order-first">
             <p className="text-sm font-semibold uppercase tracking-wider text-[var(--accent)]">
               {doctor.specialty}
             </p>
@@ -32,7 +32,7 @@ export function Hero() {
               </Button>
             </div>
           </div>
-          <div className="flex justify-center lg:justify-end">
+          <div className="order-first flex justify-center lg:order-last lg:justify-end">
             <div className="relative w-64 overflow-hidden rounded-2xl bg-[var(--border)] sm:w-72" style={{ aspectRatio: "2/3" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

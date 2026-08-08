@@ -141,7 +141,7 @@
       "name": "Mater Medical Centre",
       "area": "South Brisbane, QLD",
       "type": "Private",
-      "days": "[Days pending — confirm with Dr He]",
+      "days": "Consulting days to be confirmed — please call the rooms",
       "mapUrl": "https://maps.google.com/?q=Mater+Medical+Centre+South+Brisbane",
       "note": "Referral required"
     },
@@ -149,14 +149,14 @@
       "name": "St Andrews Hospital Specialist Suites",
       "area": "Spring Hill, QLD",
       "type": "Private",
-      "days": "[Days pending — confirm with Dr He]",
+      "days": "Consulting days to be confirmed — please call the rooms",
       "mapUrl": "https://maps.google.com/?q=St+Andrews+Hospital+Specialist+Suites+Spring+Hill",
       "note": "Referral required"
     }
   ],
   "fees": {
-    "initialConsultation": "[Fee pending — confirm with Dr He]",
-    "followUp": "[Fee pending — confirm with Dr He]",
+    "initialConsultation": "",
+    "followUp": "",
     "note": "A valid referral from your GP or another specialist is required for a Medicare rebate. Please contact the rooms for a full fee schedule and current Medicare rebate information."
   },
   "faqs": [
@@ -182,15 +182,15 @@
     }
   ],
   "contact": {
-    "email": "[secretary email pending — confirm with Dr He]",
-    "phone": "[secretary phone pending — confirm with Dr He]",
+    "email": "bookings@qcg.com.au",
+    "phone": "07 3016 1111",
     "bookingType": "phone",
     "bookingUrl": "",
     "calLink": "",
     "formspreeId": "",
     "formDisclaimer": "This form is not monitored 24/7. Do not use it in an emergency. If you have chest pain or feel seriously unwell, call 000.",
     "urgentBanner": "If you are experiencing chest pain, severe breathlessness, or feel very unwell right now, call 000 immediately.",
-    "secretaryName": "[secretary name pending — confirm with Dr He]"
+    "secretaryName": ""
   },
   "seo": {
     "siteUrl": "https://www.drmaggiehe.com.au",

@@ -72,7 +72,7 @@ export function Footer() {
             <p className="font-semibold text-[var(--text-primary)]">Contact</p>
             <div className="mt-3 flex flex-col gap-2 text-sm text-[var(--text-secondary)]">
               <a
-                href={`tel:${contact.phone}`}
+                href={`tel:${contact.phone.replace(/\s/g, "")}`}
                 className="transition-colors hover:text-[var(--text-primary)] no-underline"
               >
                 {contact.phone}

@@ -97,7 +97,7 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-site items-center justify-between px-4 py-4 sm:px-6">
           <a href="/" className="group no-underline">
-            <span className="block text-lg font-bold text-[var(--text-primary)]">
+            <span className="block text-xl font-bold text-[var(--text-primary)] sm:text-2xl">
               {siteConfig.doctor.displayName}
             </span>
             <span className="hidden sm:block text-xs text-[var(--text-secondary)] leading-tight">
