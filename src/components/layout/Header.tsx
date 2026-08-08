@@ -96,19 +96,29 @@ export function Header() {
         style={{ backgroundColor: "color-mix(in srgb, var(--bg-primary) 95%, transparent)" }}
       >
         <div className="mx-auto flex max-w-site items-center justify-between px-4 py-4 sm:px-6">
-          <a href="/" className="group no-underline">
-            <span className="block whitespace-nowrap text-3xl font-bold text-[var(--text-primary)] md:text-2xl lg:text-4xl">
-              {siteConfig.doctor.displayName}
-            </span>
-            <span className="mt-1.5 hidden whitespace-nowrap sm:block text-sm text-[var(--text-secondary)] leading-tight">
-              {siteConfig.doctor.credentials}
-            </span>
-            <span className="mt-1 hidden whitespace-nowrap sm:block text-sm font-medium text-[var(--accent)] leading-tight">
-              {siteConfig.doctor.shortSpecialty ?? siteConfig.doctor.specialty}
+          <a href="/" className="group flex items-center gap-3 no-underline sm:gap-4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo-mh.png"
+              alt=""
+              width={621}
+              height={384}
+              className="hidden h-10 w-auto shrink-0 min-[360px]:block sm:h-14 lg:h-12 xl:h-16"
+            />
+            <span className="block">
+              <span className="block whitespace-nowrap text-3xl font-bold text-[var(--text-primary)] lg:text-2xl xl:text-4xl">
+                {siteConfig.doctor.displayName}
+              </span>
+              <span className="mt-1.5 hidden whitespace-nowrap sm:block text-sm text-[var(--text-secondary)] leading-tight">
+                {siteConfig.doctor.credentials}
+              </span>
+              <span className="mt-1 hidden whitespace-nowrap sm:block text-sm font-medium text-[var(--accent)] leading-tight">
+                {siteConfig.doctor.shortSpecialty ?? siteConfig.doctor.specialty}
+              </span>
             </span>
           </a>
 
-          <nav className="hidden items-center gap-4 md:flex lg:gap-8" aria-label="Main navigation">
+          <nav className="hidden items-center gap-4 lg:flex xl:gap-6" aria-label="Main navigation">
             {siteConfig.nav.map((item) => (
               <a
                 key={item.href}
@@ -133,12 +143,12 @@ export function Header() {
             </Button>
           </nav>
 
-          <div className="flex items-center gap-2 md:hidden">
-            {/* Theme toggle (mobile) */}
+          <div className="flex items-center gap-2 lg:hidden">
+            {/* Theme toggle. Below sm the logo and name need the width, so it moves into the menu. */}
             {mounted && (
               <button
                 onClick={toggle}
-                className="inline-flex items-center justify-center rounded-lg p-2 text-[var(--text-primary)]"
+                className="hidden items-center justify-center rounded-lg p-2 text-[var(--text-primary)] sm:inline-flex"
                 aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
               >
                 {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -159,17 +169,19 @@ export function Header() {
       {mobileOpen && (
         <>
           {/* Backdrop to block all content behind */}
-          <div className="fixed inset-0 z-[59] bg-black/50 md:hidden" onClick={() => setMobileOpen(false)} />
+          <div className="fixed inset-0 z-[59] bg-black/50 lg:hidden" onClick={() => setMobileOpen(false)} />
           {/* Menu panel — full-screen solid overlay */}
           <div
-            className="fixed top-0 left-0 right-0 bottom-0 z-[60] overflow-y-auto md:hidden"
+            className="fixed top-0 left-0 right-0 bottom-0 z-[60] overflow-y-auto lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
             style={{ backgroundColor: "var(--bg-primary)", minHeight: "100vh", minWidth: "100vw" }}
           >
             <div className="flex items-center justify-between px-4 py-4 sm:px-6">
-              <a href="/" className="text-lg font-bold text-[var(--text-primary)] no-underline">
+              <a href="/" className="flex items-center gap-3 text-lg font-bold text-[var(--text-primary)] no-underline">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/logo-mh.png" alt="" width={621} height={384} className="h-9 w-auto shrink-0" />
                 {siteConfig.doctor.displayName}
               </a>
               <button
@@ -191,6 +203,16 @@ export function Header() {
                   {item.label}
                 </a>
               ))}
+              {/* Below sm the header has no room for the toggle, so it lives here instead. */}
+              {mounted && (
+                <button
+                  onClick={toggle}
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-left text-lg font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-secondary)] sm:hidden"
+                >
+                  {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                  {isDark ? "Light mode" : "Dark mode"}
+                </button>
+              )}
               <div className="mt-4 px-4">
                 <Button
                   {...getBookingProps(pathname)}

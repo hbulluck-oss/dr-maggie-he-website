@@ -51,13 +51,49 @@ Heeraj from the doctor-website template. Next.js 14 (App Router) + Tailwind + Ty
   cardiology", not a protected-title claim).
 - Never fabricate clinical numbers or citations in articles; verify against primary sources.
 
+## Logo
+
+Her monogram (heart + M + H, red/navy/gold) is the site mark. Source art is the sibling file
+`../Maggie He Logo.jpeg` — a JPEG **on a black background**, not transparent. The web asset
+`public/images/logo-mh.png` was derived from it by keying out the black, un-multiplying the
+antialiased edges so they do not fringe grey, and cropping to the mark (621x384). `src/app/favicon.ico`
+and `src/app/apple-icon.png` are generated from the same PNG. If she ever supplies real vector art,
+replace all three rather than re-keying the JPEG.
+
+**The header is width-constrained.** The desktop nav is 773px wide on its own (six links, theme
+toggle, and a 160px "Book a consultation" button), so the full nav plus the logo and name cannot fit
+below about 1000px. The nav therefore appears at `lg` (1024px) and everything narrower uses the
+hamburger. Before touching header sizes, re-measure: shrinking the nav (fewer links, or a shorter CTA
+label) is the only way to lower that breakpoint.
+
 ## Open items
 
 - Domain purchase and connection (then update `seo.siteUrl`).
-- Logo design (she requested one).
 - Consulting days per location (she will supply/edit).
+- No Open Graph image is set, so link previews show text only. Her logo on the cream background
+  would be the obvious 1200x630 card.
 
 ## Session log
+
+### 2026-08-08 (later) — Logo in the header, and the header made to fit
+- Added her monogram top-left of the name/degrees/title, vertically centred against the whole text
+  block, at 40px on phones, 56px on tablet, 48px at `lg`, 64px at `xl` (it steps *down* at `lg`
+  because that is where the nav appears and reclaims the width).
+- Replaced the Next.js default favicon (black circle and triangle) with her mark; added
+  `apple-icon.png` on the cream background, since iOS composites transparency to black.
+- **Fixed a pre-existing bug:** the desktop nav overflowed the viewport between 768px and ~880px,
+  putting the "Book a consultation" button off-screen and running the nav links over the
+  "BMedSci, MD, FRACP" line. iPad portrait (768px) was affected. Nav moved from `md:flex` to
+  `lg:flex`, nav gap `lg:gap-8` to `xl:gap-6`, and the name from `md:text-2xl` to `lg:text-2xl
+  xl:text-4xl`.
+- The theme toggle is hidden below `sm` and appears as a "Dark mode" row inside the mobile menu
+  instead. Without this the logo could not fit beside her name at 375px without shrinking the name,
+  which she had explicitly asked to be larger.
+- Below 360px the logo is hidden so her name keeps its full size.
+- `scroll-padding-top`/`scroll-margin-top` gain a 7.5rem step at 1280px to match the 117px header.
+- Verified in Chromium at 320/360/375/390/414/480/640/768/820/900/1024/1100/1280/1440/1920 in both
+  colour schemes: no overlap, no overflow, no horizontal scroll, no console errors, on the homepage,
+  an article, a condition page and a policy page.
 
 ### 2026-08-08 — Questionnaire applied + header/hero polish
 - `62b2093` Applied her questionnaire answers: booking contact set (07 3016 1111 /

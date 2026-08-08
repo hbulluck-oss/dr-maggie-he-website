@@ -56,6 +56,13 @@
     }
   }
 
+  /* The header grows to 117px once the name and logo reach full size. */
+  @media (min-width: 1280px) {
+    html {
+      scroll-padding-top: 7.5rem;
+    }
+  }
+
   section[id] {
     scroll-margin-top: 4.5rem;
   }
@@ -63,6 +70,12 @@
   @media (min-width: 640px) {
     section[id] {
       scroll-margin-top: 7rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    section[id] {
+      scroll-margin-top: 7.5rem;
     }
   }
 
