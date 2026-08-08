@@ -82,12 +82,33 @@ below about 1000px. The nav therefore appears at `lg` (1024px) and everything na
 hamburger. Before touching header sizes, re-measure: shrinking the nav (fewer links, or a shorter CTA
 label) is the only way to lower that breakpoint.
 
+## Handover
+
+`START-HERE.md` is the authoritative guide for whoever owns and runs this site. It is written for a
+non-technical reader and covers GitHub, Vercel, connecting `drmaggiehe.com.au` at VentraIP, and
+switching on `/admin`. Its Vercel and VentraIP steps were taken from those companies' live docs, not
+from memory, and it cites them.
+
+**`DEPLOY-GUIDE.md` and `SETUP-GUIDE.md` are stale template leftovers** — they name a different
+doctor (`dr-veerasamy-website`) and recommend a registrar she does not use. `START-HERE.md` says to
+ignore them. Delete them once HB confirms.
+
+Nothing in this repo is tied to HB's accounts: `formspreeId` is empty, there are no `.env` files, no
+analytics domain is set, and no HB identifiers remain in `src/` or `public/`. The only couplings were
+the GitHub repo and the Vercel project themselves, which is what the handover replaces.
+
+`/admin` (Sveltia CMS) needs `public/admin/config.yml` `repo:` set to the account and repository that
+Vercel deploys from — it currently holds a deliberate `CHANGE-ME-...` placeholder, so the editor does
+**not** work until whoever owns the site sets it. A single editor can sign in with a GitHub
+fine-grained token (Contents: read and write); no OAuth app or auth proxy is needed.
+
 ## Open items
 
 - Domain purchase and connection (then update `seo.siteUrl`).
 - Consulting days per location (she will supply/edit).
 - No Open Graph image is set, so link previews show text only. Her logo on the cream background
   would be the obvious 1200x630 card.
+- Delete `DEPLOY-GUIDE.md` and `SETUP-GUIDE.md` once HB confirms.
 
 ## Session log
 

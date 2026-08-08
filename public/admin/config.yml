@@ -1,6 +1,16 @@
+# The /admin editor saves straight into the GitHub repository this site is
+# deployed from, and Vercel then rebuilds the site automatically.
+#
+# SET THIS to whichever GitHub account owns the site, in the form
+# account-name/repository-name. It must be the repo Vercel deploys from, or
+# edits will save to the wrong place. See START-HERE.md, step 6.
+#
+# To sign in, choose "Sign In with Token" and paste a GitHub personal access
+# token with "Contents: read and write" permission on that repository. No OAuth
+# app or auth server is needed for a single editor.
 backend:
   name: github
-  repo: your-username/doctor-website  # CHANGE THIS: your GitHub username/repo
+  repo: CHANGE-ME-github-account/CHANGE-ME-repository-name
   branch: main
 
 media_folder: public/images
