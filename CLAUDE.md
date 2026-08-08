@@ -84,14 +84,17 @@ label) is the only way to lower that breakpoint.
 
 ## Handover
 
-`START-HERE.md` is the authoritative guide for whoever owns and runs this site. It is written for a
-non-technical reader and covers GitHub, Vercel, connecting `drmaggiehe.com.au` at VentraIP, and
-switching on `/admin`. Its Vercel and VentraIP steps were taken from those companies' live docs, not
-from memory, and it cites them.
+**`README.md` is the authoritative handover guide** and deliberately occupies the README slot so
+GitHub renders it as the first thing anyone sees on the repo. It replaced the template's generic
+readme (recoverable at `76111ec`), which told the reader to *fork* the template and was wrong for
+her. It is written for someone who has never done any of this: what GitHub, Vercel and DNS each are,
+then click-by-click through account creation, upload, deploy, connecting `drmaggiehe.com.au` at
+VentraIP, and switching on `/admin`, with a "you should now see" checkpoint after each stage. Its
+Vercel and VentraIP steps come from those companies' live docs, not from memory, and it cites them.
 
 **`DEPLOY-GUIDE.md` and `SETUP-GUIDE.md` are stale template leftovers** — they name a different
-doctor (`dr-veerasamy-website`) and recommend a registrar she does not use. `START-HERE.md` says to
-ignore them. Delete them once HB confirms.
+doctor (`dr-veerasamy-website`) and recommend a registrar she does not use. `README.md` tells the
+reader to ignore both. Delete them once HB confirms.
 
 Nothing in this repo is tied to HB's accounts: `formspreeId` is empty, there are no `.env` files, no
 analytics domain is set, and no HB identifiers remain in `src/` or `public/`. The only couplings were
