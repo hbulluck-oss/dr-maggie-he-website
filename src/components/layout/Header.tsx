@@ -97,13 +97,13 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-site items-center justify-between px-4 py-4 sm:px-6">
           <a href="/" className="group no-underline">
-            <span className="block whitespace-nowrap text-xl font-bold text-[var(--text-primary)] lg:text-2xl">
+            <span className="block whitespace-nowrap text-3xl font-bold text-[var(--text-primary)] md:text-2xl lg:text-4xl">
               {siteConfig.doctor.displayName}
             </span>
-            <span className="hidden whitespace-nowrap sm:block text-xs text-[var(--text-secondary)] leading-tight">
+            <span className="hidden whitespace-nowrap sm:block text-sm text-[var(--text-secondary)] leading-tight">
               {siteConfig.doctor.credentials}
             </span>
-            <span className="hidden whitespace-nowrap sm:block text-xs font-medium text-[var(--accent)] leading-tight">
+            <span className="hidden whitespace-nowrap sm:block text-sm font-medium text-[var(--accent)] leading-tight">
               {siteConfig.doctor.shortSpecialty ?? siteConfig.doctor.specialty}
             </span>
           </a>
