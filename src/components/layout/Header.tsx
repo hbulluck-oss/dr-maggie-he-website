@@ -97,18 +97,18 @@ export function Header() {
       >
         <div className="mx-auto flex max-w-site items-center justify-between px-4 py-4 sm:px-6">
           <a href="/" className="group no-underline">
-            <span className="block text-xl font-bold text-[var(--text-primary)] sm:text-2xl">
+            <span className="block whitespace-nowrap text-xl font-bold text-[var(--text-primary)] lg:text-2xl">
               {siteConfig.doctor.displayName}
             </span>
-            <span className="hidden sm:block text-xs text-[var(--text-secondary)] leading-tight">
+            <span className="hidden whitespace-nowrap sm:block text-xs text-[var(--text-secondary)] leading-tight">
               {siteConfig.doctor.credentials}
             </span>
-            <span className="hidden sm:block text-xs font-medium text-[var(--accent)] leading-tight">
+            <span className="hidden whitespace-nowrap sm:block text-xs font-medium text-[var(--accent)] leading-tight">
               {siteConfig.doctor.shortSpecialty ?? siteConfig.doctor.specialty}
             </span>
           </a>
 
-          <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-4 md:flex lg:gap-8" aria-label="Main navigation">
             {siteConfig.nav.map((item) => (
               <a
                 key={item.href}

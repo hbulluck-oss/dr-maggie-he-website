@@ -7,7 +7,7 @@ export function Hero() {
   const bookingExternal = !!contact.bookingUrl;
 
   return (
-    <section className="relative bg-[var(--bg-secondary)] pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <section className="relative bg-[var(--bg-secondary)] pt-10 pb-20 sm:pt-24 sm:pb-28 lg:pt-40">
       <div className="mx-auto max-w-site px-4 sm:px-6">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
           <div className="order-last lg:order-first">
