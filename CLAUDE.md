@@ -132,17 +132,15 @@ fine-grained token (Contents: read and write); no OAuth app or auth proxy is nee
 - Measured at 320/360/375/390/414/480/640/768/820/900/1023/1024/1100/1180/1279/1280/1440/1920: no
   collision, no horizontal scroll, no console errors, mobile menu opens clean at 360/375/768.
 
-### 2026-08-09 — Hero strapline scaled up
-- `94fe0d1` The gold specialty line was `text-sm` (14px) against a 48px headline and read as a
-  caption. Now `text-xl sm:text-2xl lg:text-3xl` (20/24/30px), `leading-tight`, `tracking-wide`;
-  headline gap `mt-4` → `mt-5`.
-- **Matching the headline outright was measured and rejected.** At 48px the uppercase string wraps
-  to 4 lines (240px) on desktop and 7 lines on mobile — taller than the headline, so it takes over
-  the hero. The 79-character all-caps string is the constraint; shortening it is the only way to
-  go bigger.
-- Measured (not eyeballed) at 320/360/375/390/414/640/768/820/1024/1280/1440/1920: gold block
-  stays shorter than the headline at every width, no horizontal scroll, no console errors.
-- Revert point: branch `backup/pre-hero-type-scale-20260809` at `45eb9ee` (pushed to origin).
+### 2026-08-09 — Hero gold strapline scaled up, then reverted (net: unchanged)
+- `94fe0d1` took the gold specialty line from `text-sm` (14px) to 20/24/30px; `f0f1f4a` put it
+  back. **The styling is now byte-identical to `45eb9ee`** — only an explanatory comment differs.
+  Do not re-propose this without her asking.
+- Why it does not scale: the specialty string is **79 characters, all caps**. At the headline's
+  own 48px it wraps to 4 lines (240px) on desktop and 7 on mobile, taller than the headline and
+  inverting the hierarchy. Even the 30px middle ground ran to two lines and crowded the headline.
+  Shortening the string is the only route to a bigger strapline, and that is her content call.
+- Revert point for the whole day: branch `backup/pre-hero-type-scale-20260809` at `45eb9ee`.
 
 ### 2026-08-08 (later) — Logo in the header, and the header made to fit
 - Added her monogram top-left of the name/degrees/title, vertically centred against the whole text
