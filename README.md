@@ -217,6 +217,26 @@ works. That text is normal, and you can ignore it.
 the pages, click the menu, try it on your phone. It is easier to sort out any problem now
 than after the real address is connected.
 
+> **Do not be thrown by the address Vercel gives you.** It will look something like
+> `drmaggiehe-website-a1b2.vercel.app`, with a few random letters stuck on the end. That is
+> normal and nothing has gone wrong. Vercel makes up its own name for the site, quite
+> separately from the name you gave the repository on GitHub, and if the tidy version of the
+> name is already being used by somebody else in the world, it adds a few letters so yours is
+> unique. Those extra letters are part of the address. Leaving one out is the same as getting
+> the address wrong.
+>
+> **GitHub names and Vercel names are two different things and never have to match.** Nothing
+> on GitHub gains those extra letters.
+>
+> You will also notice Vercel listing several other addresses for the same site: some very
+> long, some that ask you to log in when you click them, some that show an error. Those are
+> Vercel's own internal ones, one is created every time the site rebuilds, and none of them is
+> meant for visitors. **The Visit button at the top right of the project page always opens the
+> correct one.** Use that and ignore the rest.
+>
+> All of this stops mattering after Part 5, when `www.drmaggiehe.com.au` becomes the address
+> everybody uses.
+
 ---
 
 ## Part 4: Tell Vercel the real address
