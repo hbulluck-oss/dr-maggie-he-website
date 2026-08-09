@@ -60,6 +60,18 @@ Heeraj from the doctor-website template. Next.js 14 (App Router) + Tailwind + Ty
   cardiology", not a protected-title claim).
 - Never fabricate clinical numbers or citations in articles; verify against primary sources.
 
+## Colour scheme
+
+**Light for everyone by default. The visitor's OS setting is deliberately ignored.** Dark is
+reached only by pressing the header toggle, and that choice is then remembered per browser.
+There is **no `prefers-color-scheme` rule anywhere** — reintroducing one would land every
+dark-mode device on the dark palette again, which is the behaviour she asked to be removed. Four
+places implement this and all four must agree: the palette in `globals.css`, the generated palette
+in `layout.tsx`'s inline `<style>`, the logo swap at the foot of `globals.css`, and `useTheme()` in
+`Header.tsx`. `:root` also sets `color-scheme: light` (and `:root.dark` sets `dark`) so scrollbars
+and form fields follow the page rather than the device. A tiny inline script in `<head>` re-applies
+a remembered dark choice before first paint; without it the page paints light then flips.
+
 ## Logo
 
 Her monogram (heart + M + H, red/navy/gold) is the site mark. Source art is the sibling file

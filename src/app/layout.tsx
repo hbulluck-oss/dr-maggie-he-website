@@ -97,20 +97,9 @@ export default function RootLayout({
             --text-secondary: ${d.mutedTextColour};
             --border: ${d.borderColour};
           }
-          @media (prefers-color-scheme: dark) {
-            :root:not(.light) {
-              --primary: ${darkPrimary};
-              --primary-hover: ${darkPrimaryHover};
-              --accent: ${darkAccent};
-              --accent-hover: ${darkAccentHover};
-              --on-accent: ${d.primaryColour};
-              --bg-primary: ${darkBg};
-              --bg-secondary: ${darkBgSecondary};
-              --text-primary: ${darkText};
-              --text-secondary: ${darkMutedText};
-              --border: ${darkBorder};
-            }
-          }
+          /* Light by default. Dark is opt-in via the header toggle only, so there is
+             deliberately no prefers-color-scheme block here — one would override the
+             light palette above for any visitor whose device is set to dark. */
           :root.dark {
             --primary: ${darkPrimary};
             --primary-hover: ${darkPrimaryHover};
@@ -123,6 +112,12 @@ export default function RootLayout({
             --text-secondary: ${darkMutedText};
             --border: ${darkBorder};
           }
+        `}} />
+        {/* Re-apply a remembered dark choice before first paint. Without this the page
+            paints light and then flips, because the toggle's state lives in React. Only
+            an explicit stored "dark" counts; the OS setting is never consulted. */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          try{if(localStorage.getItem("theme")==="dark"){document.documentElement.classList.add("dark")}}catch(e){}
         `}} />
       </head>
       <body className="font-sans antialiased">

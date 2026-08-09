@@ -14,35 +14,28 @@ function getBookingProps(pathname: string) {
   return { href: resolveHref("#contact", pathname) };
 }
 
+// Light is the default for everyone. The visitor's operating system setting is
+// deliberately not consulted: dark is reached only by pressing the header toggle,
+// and that choice is then remembered for this browser.
 function useTheme() {
-  const [theme, setTheme] = useState<"light" | "dark" | "system">("system");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     const stored = localStorage.getItem("theme") as "light" | "dark" | null;
-    if (stored) {
-      setTheme(stored);
-      document.documentElement.classList.remove("light", "dark");
-      document.documentElement.classList.add(stored);
+    if (stored === "dark") {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
     }
   }, []);
 
   const toggle = () => {
-    const isDark =
-      theme === "dark" ||
-      (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-    const next = isDark ? "light" : "dark";
+    const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
-    document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(next);
+    document.documentElement.classList.toggle("dark", next === "dark");
     localStorage.setItem("theme", next);
   };
 
-  const isDark =
-    theme === "dark" ||
-    (theme === "system" && typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-  return { isDark, toggle };
+  return { isDark: theme === "dark", toggle };
 }
 
 // Prefix hash links with "/" when not on the homepage

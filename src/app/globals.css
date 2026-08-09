@@ -15,23 +15,17 @@
   --border: #e2e8f0;
 }
 
-/* ── Dark Mode (OS preference) ──────────────────────────────────────────── */
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --primary: #5a9bd5;
-    --primary-hover: #7ab8e8;
-    --accent: #e57373;
-    --accent-hover: #ef9a9a;
-    --bg-primary: #0f1724;
-    --bg-secondary: #1a2435;
-    --text-primary: #e8ecf1;
-    --text-secondary: #94a3b8;
-    --border: #2d3a4f;
-  }
+/* ── Dark Mode (manual toggle only) ─────────────────────────────────────────
+   The site is light by default and does NOT follow the visitor's operating
+   system. Dark is opt-in through the header toggle, which sets .dark on <html>
+   and remembers the choice. There is deliberately no prefers-color-scheme rule:
+   adding one back would make a dark-mode visitor land on the dark palette. */
+:root {
+  color-scheme: light;
 }
 
-/* ── Dark Mode (manual toggle) ──────────────────────────────────────────── */
 :root.dark {
+  color-scheme: dark;
   --primary: #5a9bd5;
   --primary-hover: #7ab8e8;
   --accent: #e57373;
@@ -145,8 +139,8 @@
 /* ── Logo theme swap ─────────────────────────────────────────────────────── */
 /* Her navy (#01367c) sits at 1.5:1 against the dark background, well under the
    3:1 WCAG asks of graphical objects, so dark mode uses a lighter-navy variant
-   (#4f87d1, 4.8:1). Done in CSS rather than JS because the theme can come from
-   the OS as well as the header toggle, and a JS swap would flash on load.
+   (#4f87d1, 4.8:1). Done in CSS rather than JS because a JS swap would flash on
+   load. Only the .dark opt-in switches it; the OS preference does not.
    Kept outside @layer so it wins over the Tailwind height utilities. */
 .logo-light {
   display: block;
@@ -154,16 +148,6 @@
 
 .logo-dark {
   display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) .logo-light {
-    display: none;
-  }
-
-  :root:not(.light) .logo-dark {
-    display: block;
-  }
 }
 
 :root.dark .logo-light {
