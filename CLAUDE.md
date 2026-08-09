@@ -9,9 +9,18 @@ Personal consultant website for **Dr Maggie He**, Consultant Cardiologist with s
 expertise in interventional cardiology (Brisbane; Queensland Cardiovascular Group). Built by
 Heeraj from the doctor-website template. Next.js 14 (App Router) + Tailwind + TypeScript.
 
-- **Repo:** `github.com/hbulluck-oss/dr-maggie-he-website` (origin, push to `main`)
-- **Deploy:** Vercel builds on every push to `main`. Preview:
-  https://dr-maggie-he-website-gfgw.vercel.app
+- **Repo:** `github.com/hbulluck-oss/dr-maggie-he-website` (origin, push to `main`). Public, and it
+  must stay that way until Dr He has imported it — the handover route in `README.md` copies from it.
+- **Deploy:** Vercel builds on every push to `main`. Live at
+  https://dr-maggie-he-website-gfgw.vercel.app — the `-gfgw` suffix is part of the address, not a
+  typo. **Only that address is public**; the `*-hbulluck-oss-projects.vercel.app` forms sit behind
+  a Vercel login wall by design.
+- **There were two Vercel projects on this one repo** (`dr-maggie-he-website-gfgw` and
+  `dr-maggie-he-website`), so every push built twice and the tidier-looking project served nothing
+  but 404s. The dead one was deleted 2026-08-09. If duplicate builds ever reappear, check
+  `gh api repos/hbulluck-oss/dr-maggie-he-website/deployments` and count the distinct
+  `environment` values — that is what diagnosed it. **Attach the real domain to the surviving
+  project only.**
 - **Domain:** NOT purchased yet. `seo.siteUrl` holds the placeholder `www.drmaggiehe.com.au`.
 - This folder lives inside the second-brain vault at
   `projects/DRMAGGIEHE website/website-files/` but is its own git repo; the vault does not
