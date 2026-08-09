@@ -119,7 +119,11 @@ export function Header() {
               />
             </span>
             <span className="block">
-              <span className="block whitespace-nowrap text-3xl font-bold text-[var(--text-primary)] lg:text-2xl xl:text-4xl">
+              {/* Same face and size as the hero headline (serif, 36px then 48px). Two steps are
+                  forced by width, not taste: below 390px the 36px name hits the hamburger once
+                  the logo is showing, and at lg the desktop nav sits beside the name, where
+                  1024px clears only 32px. Both fall back to 30px. Re-measure before changing. */}
+              <span className="block whitespace-nowrap font-serif text-3xl font-bold text-[var(--text-primary)] min-[390px]:text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">
                 {siteConfig.doctor.displayName}
               </span>
               <span className="mt-1.5 hidden whitespace-nowrap sm:block text-sm text-[var(--text-secondary)] leading-tight">
@@ -192,7 +196,9 @@ export function Header() {
             style={{ backgroundColor: "var(--bg-primary)", minHeight: "100vh", minWidth: "100vw" }}
           >
             <div className="flex items-center justify-between px-4 py-4 sm:px-6">
-              <a href="/" className="flex items-center gap-3 text-lg font-bold text-[var(--text-primary)] no-underline">
+              {/* Serif to match the wordmark in the main header; size stays small, this is the
+                  bar inside the open mobile menu, not the wordmark itself. */}
+              <a href="/" className="flex items-center gap-3 font-serif text-lg font-bold text-[var(--text-primary)] no-underline">
                 <span className="shrink-0">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/images/logo-mh.png" alt="" width={414} height={256} className="logo-light h-9 w-auto" />
