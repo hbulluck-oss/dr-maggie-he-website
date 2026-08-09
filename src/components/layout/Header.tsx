@@ -119,11 +119,12 @@ export function Header() {
               />
             </span>
             <span className="block">
-              {/* Same face and size as the hero headline (serif, 36px then 48px). Two steps are
-                  forced by width, not taste: below 390px the 36px name hits the hamburger once
-                  the logo is showing, and at lg the desktop nav sits beside the name, where
-                  1024px clears only 32px. Both fall back to 30px. Re-measure before changing. */}
-              <span className="block whitespace-nowrap font-serif text-3xl font-bold text-[var(--text-primary)] min-[390px]:text-4xl sm:text-5xl lg:text-3xl xl:text-5xl">
+              {/* Same face as the hero headline, deliberately a size below it: 40px against the
+                  headline's 48px, so the wordmark anchors the header without competing. The two
+                  steps back to 30px are forced by width, not taste: below 390px the name hits the
+                  hamburger once the logo is showing, and at lg the desktop nav sits beside it,
+                  where 1024px clears only 32px. Re-measure before changing any of these. */}
+              <span className="block whitespace-nowrap font-serif text-3xl font-bold text-[var(--text-primary)] min-[390px]:text-4xl sm:text-[2.5rem]/none lg:text-3xl xl:text-[2.5rem]/none">
                 {siteConfig.doctor.displayName}
               </span>
               <span className="mt-1.5 hidden whitespace-nowrap sm:block text-sm text-[var(--text-secondary)] leading-tight">

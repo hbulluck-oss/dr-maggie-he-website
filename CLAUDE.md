@@ -115,16 +115,20 @@ fine-grained token (Contents: read and write); no OAuth app or auth proxy is nee
 
 ## Session log
 
-### 2026-08-09 (later) — Header wordmark matched to the headline
-- "Dr Maggie He" moved from sans to **Playfair Display, matching the hero headline**, at the
-  headline's own sizes: `text-3xl min-[390px]:text-4xl sm:text-5xl lg:text-3xl xl:text-5xl`.
+### 2026-08-09 (later) — Header wordmark: serif, one size below the headline
+- "Dr Maggie He" moved from sans to **Playfair Display, the hero headline's face**, and is
+  deliberately held **one size below it — 40px against the headline's 48px**:
+  `text-3xl min-[390px]:text-4xl sm:text-[2.5rem]/none lg:text-3xl xl:text-[2.5rem]/none`.
   The mobile-menu bar's small wordmark went serif too, size unchanged.
+- It briefly matched the headline outright at 48px (`123d8b7`); she found it too dominant, so
+  40px is the settled middle between the old 36px and that. 40px also restores breathing room
+  next to the nav: **62px** clear at 1280px+, against 11px at 48px.
 - **Two fallbacks to 30px are forced by width, not taste.** Below 390px the 36px name touches the
   hamburger once the logo shows (375px overflowed by 2px, 360px by 17px). Between 1024 and 1279px
   the desktop nav sits beside the name and 1024px clears only **32px** — 36px overflows by 3px.
   So the match holds at 390-1023px and 1280px+, and steps down in the two tight bands.
-- 1280px+ leaves only **11px** between the wordmark and "About". It is the max-width-1200 bar that
-  binds, not the viewport, so 1920px is no roomier than 1280px. A longer display name will not fit.
+- It is the **max-width-1200 bar** that binds the header, not the viewport, so 1920px is no
+  roomier than 1280px. At the rejected 48px there were only 11px to spare; at 40px there are 62px.
 - Measured at 320/360/375/390/414/480/640/768/820/900/1023/1024/1100/1180/1279/1280/1440/1920: no
   collision, no horizontal scroll, no console errors, mobile menu opens clean at 360/375/768.
 
