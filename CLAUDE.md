@@ -115,6 +115,18 @@ fine-grained token (Contents: read and write); no OAuth app or auth proxy is nee
 
 ## Session log
 
+### 2026-08-09 — Hero strapline scaled up
+- `94fe0d1` The gold specialty line was `text-sm` (14px) against a 48px headline and read as a
+  caption. Now `text-xl sm:text-2xl lg:text-3xl` (20/24/30px), `leading-tight`, `tracking-wide`;
+  headline gap `mt-4` → `mt-5`.
+- **Matching the headline outright was measured and rejected.** At 48px the uppercase string wraps
+  to 4 lines (240px) on desktop and 7 lines on mobile — taller than the headline, so it takes over
+  the hero. The 79-character all-caps string is the constraint; shortening it is the only way to
+  go bigger.
+- Measured (not eyeballed) at 320/360/375/390/414/640/768/820/1024/1280/1440/1920: gold block
+  stays shorter than the headline at every width, no horizontal scroll, no console errors.
+- Revert point: branch `backup/pre-hero-type-scale-20260809` at `45eb9ee` (pushed to origin).
+
 ### 2026-08-08 (later) — Logo in the header, and the header made to fit
 - Added her monogram top-left of the name/degrees/title, vertically centred against the whole text
   block, at 40px on phones, 56px on tablet, 48px at `lg`, 64px at `xl` (it steps *down* at `lg`
