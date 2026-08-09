@@ -92,9 +92,19 @@ then click-by-click through account creation, upload, deploy, connecting `drmagg
 VentraIP, and switching on `/admin`, with a "you should now see" checkpoint after each stage. Its
 Vercel and VentraIP steps come from those companies' live docs, not from memory, and it cites them.
 
-**`DEPLOY-GUIDE.md` and `SETUP-GUIDE.md` are stale template leftovers** — they name a different
-doctor (`dr-veerasamy-website`) and recommend a registrar she does not use. `README.md` tells the
-reader to ignore both. Delete them once HB confirms.
+**`DEPLOY-GUIDE.md` and `SETUP-GUIDE.md` are gone** (deleted 2026-08-09; recoverable at `45eb9ee`).
+They were stale template leftovers naming a different doctor (`dr-veerasamy-website`), and their
+deploy steps were actively wrong: no warning about the folder-vs-contents upload trap, a hardcoded
+Vercel A record (`76.76.21.21`) when Vercel now issues per-project DNS values, and an instruction to
+overwrite the headshot as `doctor-placeholder.jpg`. Telling the reader to ignore them was not
+enough — the first handover attempt failed, and a plausible, confidently-worded second guide titled
+"How to Deploy Your Website" is the likeliest thing she followed. Do not reinstate them.
+
+**The recommended handover route is now GitHub's importer, not a manual upload.** `README.md`
+Part 2 Route A has her copy `hbulluck-oss/dr-maggie-he-website` into her own account via
+**+ → Import repository**; no files are handled, so the folder-vs-contents trap cannot happen.
+**This depends on that repo staying public and undeleted until she has imported.** Manual upload
+survives as Route B.
 
 Nothing in this repo is tied to HB's accounts: `formspreeId` is empty, there are no `.env` files, no
 analytics domain is set, and no HB identifiers remain in `src/` or `public/`. The only couplings were
@@ -104,6 +114,19 @@ the GitHub repo and the Vercel project themselves, which is what the handover re
 Vercel deploys from — it currently holds a deliberate `CHANGE-ME-...` placeholder, so the editor does
 **not** work until whoever owns the site sets it. A single editor can sign in with a GitHub
 fine-grained token (Contents: read and write); no OAuth app or auth proxy is needed.
+
+### Handover attempt 1 failed (2026-08-09 investigation)
+
+She uploaded to her own GitHub, Vercel deployed, and the site showed an error / rendered badly.
+**No defect was found in the site.** What was checked and came back clean: clean-room `git archive`
+→ `npm ci` → `npm run build`; a case-sensitivity and missing-asset audit across every import and
+`public/` reference (Linux is case-sensitive, macOS is not, so this is the classic works-here-fails-
+there class); `grep process.env` across `src/`, `scripts/` and `next.config.mjs` — **zero** env vars,
+so a fresh Vercel project needs no configuration; the contact form degrades to `mailto:` when
+`formspreeId` is empty rather than throwing; and the same commit deploys and renders correctly on
+the live preview at every width. The cause is therefore in the transfer, not the code. The two
+credible candidates, both now designed out: the folder-vs-contents upload (Vercel then finds no
+`package.json`, falls back to Framework Preset "Other", and serves nothing), and `DEPLOY-GUIDE.md`.
 
 ## Open items
 

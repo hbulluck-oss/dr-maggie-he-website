@@ -68,14 +68,16 @@ Mac and Windows this creates a normal folder next to it with the same name. Open
 folder. Inside you will find:
 
 - **README** (this file)
-- **website** (the site itself; you will upload this, but you never need to open it)
+- **website** (a complete copy of the site. If you follow the recommended route in Part 2 you
+  will not need to open or upload it at all. Keep it anyway: it is your offline backup, and
+  it is what you would hand to a web developer)
 - **original-logo** (Dr He's original logo artwork, kept safe in case it is ever needed again)
 
-**A note on two other files.** Inside the `website` folder there are files called
-`DEPLOY-GUIDE.md` and `SETUP-GUIDE.md`. **Ignore both.** They came with the off-the-shelf
-template this site was built from, they refer to a completely different doctor, and they
-suggest buying a domain from a company Dr He is not using. Following them will confuse you.
-This file replaces them.
+**This is the only guide.** Earlier copies of this package also contained files called
+`DEPLOY-GUIDE.md` and `SETUP-GUIDE.md`. They came with the off-the-shelf template this site
+was built from, they named a completely different doctor, and their instructions were wrong.
+They have been deleted. If you are holding an older copy of the package and can see them,
+delete that copy and use this one.
 
 ---
 
@@ -99,45 +101,72 @@ picture in the top right corner.
 
 ## Part 2: Put the website files on GitHub
 
-This is the only step where you handle the files at all.
+There are two ways to do this. **Use Route A.** It is three fields and a button, you never
+touch a file, and it cannot go wrong in the way Route B can. Route B is only here in case
+Route A is unavailable.
 
-### 2a. Make an empty home for them
+### Route A: copy it straight across (recommended)
+
+The finished website already sits in a public GitHub repository. GitHub can copy it into
+your own account for you.
+
+1. Click the **+** symbol in the top right of GitHub, then choose **Import repository**.
+2. In the box for the address of the existing repository, paste exactly:
+
+   ```
+   https://github.com/hbulluck-oss/dr-maggie-he-website
+   ```
+
+3. Under **Owner**, choose your own account.
+4. In **Repository name**, type exactly: `drmaggiehe-website`
+5. Choose **Private** or **Public**. Either works. **Private** is the safer instinct and is
+   what most people pick. Nothing about the finished website changes either way.
+6. Click **Begin import**.
+
+You are not asked for a password or a token: the source is public, so nothing is needed.
+Importing takes under a minute, and GitHub emails you when it has finished.
+
+**You should now see:** your own repository page, listing folders like `public` and `src`,
+and files like `package.json` and `next.config.mjs`.
+
+> **What this does and does not do.** It takes a complete copy of the site as it stands
+> today, into your account, owned by you. It is a copy, not a link: nothing you do afterwards
+> affects the original, and nothing that happens to the original affects you. Dr He's site is
+> yours from that moment on.
+
+### Route B: upload the files by hand (only if Route A is unavailable)
 
 1. Click the **+** symbol in the top right of GitHub, then choose **New repository**.
-2. In the **Repository name** box, type exactly: `drmaggiehe-website`
-3. Leave the description blank.
-4. Choose **Private** or **Public**. Either works. **Private** is the safer instinct and is
-   what most people pick. Nothing about the finished website changes either way.
-5. **Do not tick** "Add a README file", and leave the other two dropdowns as "None".
-   - This matters. If you tick it, the upload in the next step gets more complicated.
-6. Click **Create repository** (green button at the bottom).
-
-**You should now see:** a mostly empty page headed "Quick setup", with a lot of code-looking
-text on it. Ignore all of it except one link.
-
-### 2b. Upload the files
-
-1. On that page, find the sentence that reads *"...or push an existing repository from the
-   command line"*, and just above it, the phrase **uploading an existing file**. Click that
-   phrase. It is a link.
+2. In **Repository name**, type exactly: `drmaggiehe-website`
+3. Leave the description blank, and choose **Private** or **Public** as above.
+4. **Do not tick** "Add a README file", and leave the other two dropdowns as "None".
+   - This matters. If you tick it, the upload gets more complicated.
+5. Click **Create repository**.
+6. On the page that appears, find the phrase **uploading an existing file** and click it.
    - If you cannot find it, the direct address is your repository's web address with
      `/upload/main` added on the end.
-2. You will land on a page with a large dotted box saying **Drag files here**.
-3. Now open the `website` folder from the unzipped folder on your computer.
-4. Select **everything inside** it. On a Mac press **Cmd+A**; on Windows press **Ctrl+A**.
-5. Drag all of it into the dotted box on the GitHub page.
+7. Open the `website` folder from the unzipped folder on your computer.
+8. Select **everything inside** it. On a Mac press **Cmd+A**; on Windows press **Ctrl+A**.
+9. Drag all of it into the dotted box on the GitHub page.
 
-> **The one thing people get wrong here:** drag the *contents* of the `website` folder, not
-> the `website` folder itself. If you drag the folder, everything ends up one level too deep
-> and Vercel will not find the site. After dropping, the list on screen should start with
-> names like `package.json` and `next.config.mjs`. If instead you see a single line saying
-> `website`, you have dragged the folder. Reload the page and try again.
+> **The one thing people get wrong here, and it is the reason Route A exists.** Drag the
+> *contents* of the `website` folder, not the `website` folder itself. If you drag the
+> folder, everything ends up one level too deep, and Vercel then builds nothing and shows you
+> an error or a blank page. After dropping, the list on screen must start with names like
+> `package.json` and `next.config.mjs`. If instead you see a single line saying `website`,
+> you have dragged the folder. Reload the page and start the drag again.
 
-6. Uploading takes a few minutes and shows a long list of file names. That is normal.
-7. Scroll to the bottom and click the green **Commit changes** button.
+10. Uploading takes a few minutes and shows a long list of file names. That is normal.
+11. Scroll to the bottom and click the green **Commit changes** button.
 
 **You should now see:** your repository page, listing folders like `public` and `src`, and
-files like `package.json`. That is the entire website, stored safely.
+files like `package.json`.
+
+### Check this before you go on
+
+Look at your repository's front page. **`package.json` must be in the list you can see, not
+inside another folder.** If you have to click into a folder called `website` to find it, the
+next part will fail. Fix it now: the quickest fix is to delete the repository and do Route A.
 
 ---
 
@@ -158,12 +187,29 @@ files like `package.json`. That is the entire website, stored safely.
      GitHub access, and give Vercel permission to see your repositories. Then come back.
 8. A settings page appears. **Change nothing.** Vercel recognises this kind of website by
    itself and fills everything in correctly.
+   - One thing is worth a glance before you click. Near the top there is a box called
+     **Framework Preset**. It should already say **Next.js**. If it says **Other**, stop:
+     that means Vercel cannot see the website's files, which almost always means the files
+     went into GitHub one level too deep. Go back and read "Check this before you go on" at
+     the end of Part 2.
 9. Click **Deploy**.
 
 Vercel now builds the site. It takes one to two minutes and shows scrolling text while it
 works. That text is normal, and you can ignore it.
 
 **You should now see:** a congratulations screen with a small picture of the website.
+
+> **If instead you get a red error, or the site opens blank or shows "404".** Do not start
+> over from scratch, and do not change any build settings. Nine times out of ten the files
+> are one level too deep in GitHub. Two ways out, either is fine:
+>
+> - **Cleanest:** delete the repository on GitHub and redo Part 2 using Route A.
+> - **Or tell Vercel where to look:** in Vercel open the project, go to **Settings**, then
+>   **Build and Deployment**, scroll to **Root Directory**, type `website`, click **Save**,
+>   then go to **Deployments** and redeploy the most recent one.
+>
+> The full list of symptoms and what each one means is in "If something goes wrong" near the
+> end of this guide.
 
 10. Click the picture, or the web address shown near it. It will end in `.vercel.app`.
 
@@ -351,10 +397,34 @@ web developer can pick it up. There is nothing unusual, private or locked about 
 
 ## If something goes wrong
 
-**The website shows an error after an edit.** Nothing is lost, and you can undo it in about
-thirty seconds. In Vercel, open the project, click **Deployments**, find the most recent one
-that worked, open its **...** menu, and choose **Promote to Production**. The website goes
-straight back to that version. Then fix the edit calmly.
+### The first deployment failed, or the site looks wrong
+
+Work down this list in order. The first four are all the same underlying problem, and it is
+the commonest one by a distance.
+
+| What you see | What it means | What to do |
+|---|---|---|
+| Vercel says **"No Next.js version detected"**, or the build fails almost immediately | Vercel cannot find `package.json`, so the files went in one level too deep | Part 2's "Check this before you go on". Redo Part 2 by Route A, or set **Root Directory** to `website` |
+| **Framework Preset** said **Other**, not **Next.js** | Same cause as above | Same fix |
+| The address opens but shows **404** or a blank white page | Same cause as above, or the build never finished | Same fix, then check **Deployments** shows a green "Ready" |
+| The repository front page makes you click into a folder called `website` to see `package.json` | The folder was dragged instead of its contents | Delete the repository and redo Part 2 by Route A |
+| The pages load but have **no colours or layout**, just black text on white | The upload stopped part-way through, so some files are missing | Delete the repository and redo Part 2 by Route A |
+| **Images are missing** but everything else looks right | Same as above, the picture files did not all arrive | Same fix |
+| The build fails and the red text mentions a **file name** | A file was changed and something is mistyped in it | Look at what you last edited. In Vercel, **Deployments**, reopen the last one that worked, **...** menu, **Promote to Production** |
+
+**A note on what "it does not work" usually is not.** The website itself needs no setting up:
+no passwords, no keys, no configuration, no paid extras. It is checked before release by
+building it from scratch on a clean machine. So if the first deployment fails, suspect how
+the files reached GitHub, not the website.
+
+### The website shows an error after an edit
+
+Nothing is lost, and you can undo it in about thirty seconds. In Vercel, open the project,
+click **Deployments**, find the most recent one that worked, open its **...** menu, and
+choose **Promote to Production**. The website goes straight back to that version. Then fix
+the edit calmly.
+
+### Other things
 
 **The domain still is not working the next day.** Go back to the Vercel Domains page. It
 tells you which entry it is unhappy with and what it expected. Compare that against what is
@@ -395,10 +465,11 @@ the company's own current help pages over this guide.
 ## Quick checklist
 
 - [ ] GitHub account created
-- [ ] Repository `drmaggiehe-website` created, and the contents of the `website` folder
-      uploaded into it
+- [ ] Repository `drmaggiehe-website` created in your account, by import (Route A) or upload
+- [ ] Its front page shows `package.json` without clicking into any folder
 - [ ] Vercel account created by signing in with GitHub
-- [ ] Project imported and deployed, and the `.vercel.app` address checked and working
+- [ ] Framework Preset showed **Next.js**, not "Other", before you pressed Deploy
+- [ ] Project deployed, and the `.vercel.app` address checked and working
 - [ ] `drmaggiehe.com.au` and `www.drmaggiehe.com.au` both added in Vercel
 - [ ] The two entries Vercel asked for added at VentraIP, and any clashing old entries removed
 - [ ] Waited, and both entries show a green tick in Vercel
@@ -411,9 +482,16 @@ the company's own current help pages over this guide.
 
 ## Where these instructions come from
 
-The Vercel and VentraIP steps were taken from those companies' own current documentation
-rather than from memory, because both have changed their instructions before:
+The GitHub, Vercel and VentraIP steps were taken from those companies' own current
+documentation rather than from memory, because all of them have changed their instructions
+before:
 
+- GitHub, [Importing a repository with GitHub Importer](https://docs.github.com/en/migrations/importing-source-code/using-github-importer/importing-a-repository-with-github-importer).
+  The **+** menu, the fields you fill in, and that no credentials are needed when the
+  repository being copied is public.
+- Vercel, [Configuring a build](https://vercel.com/docs/builds/configure-a-build).
+  That an undetected framework falls back to "Other", and the exact path to the
+  **Root Directory** setting used in the troubleshooting table.
 - Vercel, [Adding and configuring a custom domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain).
   How to add a domain, and confirmation that each project now gets its own individual DNS
   values.
