@@ -11,10 +11,13 @@ export function Hero() {
       <div className="mx-auto max-w-site px-4 sm:px-6">
         <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
           <div className="order-last lg:order-first">
-            <p className="text-sm font-semibold uppercase tracking-wider text-[var(--accent)]">
+            {/* Sized to sit just under the headline (20/24/30px vs 36/48px). Matching the
+                headline outright wraps this to 4 lines desktop / 7 lines mobile and inverts
+                the hierarchy, so it stops one step short. */}
+            <p className="text-xl font-semibold uppercase leading-tight tracking-wide text-[var(--accent)] sm:text-2xl lg:text-3xl">
               {doctor.specialty}
             </p>
-            <h1 className="mt-4 font-serif text-4xl font-bold leading-tight text-[var(--text-primary)] sm:text-5xl">
+            <h1 className="mt-5 font-serif text-4xl font-bold leading-tight text-[var(--text-primary)] sm:text-5xl">
               {hero.headline}
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
